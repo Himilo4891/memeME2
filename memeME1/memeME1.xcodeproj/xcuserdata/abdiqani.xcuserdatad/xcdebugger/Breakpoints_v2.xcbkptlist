@@ -3,4 +3,99 @@
    uuid = "CFDE3B3A-39AD-4B01-A928-77BBA10B01D6"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A92D5EDE-A6C5-4D30-AC50-14587DF4A65C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "memeME1/CollectionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "4"
+            endingLineNumber = "4"
+            landmarkName = "SentMemesCollectionViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "A92D5EDE-A6C5-4D30-AC50-14587DF4A65C - 5a34b178b0ab8c43"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "memeME1.SentMemesCollectionViewController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; memeME1.SentMemesCollectionViewController"
+                  moduleName = "memeME1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdiqani/Desktop/Downloads/Himilo4891-memeMe1-eab0832/memeME1/memeME1/CollectionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "A92D5EDE-A6C5-4D30-AC50-14587DF4A65C - dac8e93c9020bc72"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "memeME1.SentMemesCollectionViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; memeME1.SentMemesCollectionViewController"
+                  moduleName = "memeME1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdiqani/Desktop/Downloads/Himilo4891-memeMe1-eab0832/memeME1/memeME1/CollectionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "6"
+                  endingLineNumber = "6"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  uuid = "A92D5EDE-A6C5-4D30-AC50-14587DF4A65C - c6d37189e171a8c9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "memeME1.SentMemesCollectionViewController.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;memeME1.SentMemesCollectionViewController&gt;"
+                  moduleName = "memeME1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdiqani/Desktop/Downloads/Himilo4891-memeMe1-eab0832/memeME1/memeME1/CollectionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "A92D5EDE-A6C5-4D30-AC50-14587DF4A65C - 146a586b2ea094b0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "memeME1.SentMemesCollectionViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;memeME1.SentMemesCollectionViewController&gt;"
+                  moduleName = "memeME1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdiqani/Desktop/Downloads/Himilo4891-memeMe1-eab0832/memeME1/memeME1/CollectionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "6"
+                  endingLineNumber = "6"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "A92D5EDE-A6C5-4D30-AC50-14587DF4A65C - a2b6191e433b50f2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "memeME1.SentMemesCollectionViewController.__deallocating_deinit"
+                  moduleName = "memeME1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdiqani/Desktop/Downloads/Himilo4891-memeMe1-eab0832/memeME1/memeME1/CollectionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

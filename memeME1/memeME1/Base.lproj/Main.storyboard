@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="memeME1" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ukl-iE-9fn">
-                                <rect key="frame" x="0.0" y="113" width="430" height="756"/>
+                                <rect key="frame" x="0.0" y="113" width="430" height="707"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" text="topTextField" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="edk-do-xWj">
                                 <rect key="frame" x="20" y="146" width="390" height="18.666666666666657"/>
@@ -28,7 +28,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" text="bottomTextField" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1B2-va-93p">
-                                <rect key="frame" x="20" y="817.33333333333337" width="390" height="18.666666666666629"/>
+                                <rect key="frame" x="20" y="768.33333333333337" width="390" height="18.666666666666629"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -36,7 +36,7 @@
                                 </connections>
                             </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nY4-Xf-aZu">
-                                <rect key="frame" x="0.0" y="869" width="430" height="49"/>
+                                <rect key="frame" x="0.0" y="820" width="430" height="49"/>
                                 <items>
                                     <barButtonItem style="plain" id="EBM-Wl-zN9">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="SM6-Xp-OjU" userLabel="cameraButton">
@@ -125,6 +125,7 @@
                             <constraint firstItem="nY4-Xf-aZu" firstAttribute="top" secondItem="1B2-va-93p" secondAttribute="bottom" constant="33" id="zmP-55-cgv"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="9An-dL-L6e"/>
                     <connections>
                         <outlet property="AlbumButton" destination="g0O-MQ-xxK" id="2YS-Qu-fV5"/>
                         <outlet property="ToolBar" destination="nY4-Xf-aZu" id="5Xb-kv-M7b"/>
@@ -161,7 +162,7 @@
         <!--Collection View Controller-->
         <scene sceneID="nDE-eO-o29">
             <objects>
-                <collectionViewController id="Uh3-Ek-C2x" customClass="CollectionViewController" sceneMemberID="viewController">
+                <collectionViewController id="Uh3-Ek-C2x" customClass="CollectionViewController" customModule="memeME1" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="b2e-eF-leW">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -231,6 +232,7 @@
                     <connections>
                         <segue destination="HYb-WK-sCg" kind="relationship" relationship="viewControllers" id="48L-Dn-EBo"/>
                         <segue destination="DUp-0E-Kf0" kind="relationship" relationship="viewControllers" id="PTy-82-BOh"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="tn6-8h-kKQ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="om4-bY-KLe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -247,7 +249,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="s1e-QM-QEK" kind="relationship" relationship="rootViewController" id="9wj-oH-IsV"/>
+                        <segue destination="s1e-QM-QEK" kind="show" identifier="" id="rGW-N5-muK"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iyg-gW-rVm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -263,11 +265,11 @@
                         <viewControllerLayoutGuide type="bottom" id="sUg-FY-ZdM"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9vc-ff-m9s">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="863"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="lAA-5L-1D9">
-                                <rect key="frame" x="-8" y="103" width="434" height="746"/>
+                                <rect key="frame" x="-8" y="59" width="434" height="804"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="VillainCell" textLabel="Ksu-XQ-no0" detailTextLabel="hdc-BT-nJD" style="IBUITableViewCellStyleSubtitle" id="eFq-1m-6b5" userLabel="MemeCell">
