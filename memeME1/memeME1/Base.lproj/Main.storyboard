@@ -310,7 +310,7 @@
                             <constraint firstItem="lAA-5L-1D9" firstAttribute="top" secondItem="9vc-ff-m9s" secondAttribute="topMargin" id="bS1-Qa-Lbt"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Villains" id="mFO-e2-GsU"/>
+                    <navigationItem key="navigationItem" title="Villains" id="mFO-e2-GsU" userLabel="Meme"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f60-Ao-QFh" sceneMemberID="firstResponder"/>
             </objects>
