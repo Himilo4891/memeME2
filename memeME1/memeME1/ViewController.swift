@@ -1,5 +1,12 @@
+//
+//  ViewController.swift
+//  memeME1
+//
+//  Created by abdiqani on 17/12/22.
+//
+import Foundation
 import UIKit
-class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegate,
+class ViewController: UIViewController, UIImagePickerControllerDelegate,
                       UINavigationControllerDelegate, UITextFieldDelegate   {
 
     override func viewWillAppear(_ animated: Bool) {
@@ -35,7 +42,8 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var AlbumButton: UIBarButtonItem!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var ToolBar: UIToolbar!
-        
+    
+    
     @IBAction func pickAnImageFromAlbum(_ sender: Any) {
         pickAnImage(UIImagePickerController.SourceType.photoLibrary)
     }
@@ -65,16 +73,19 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         
         let sharedImage = generateMemedImage()
         let controller = UIActivityViewController(activityItems: [sharedImage], applicationActivities: nil)
+        // !!!! DELETE this
         controller.completionWithItemsHandler = {(activityType: UIActivity.ActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) in
             if completed && error == nil {
                 self.save()
             }
         }
+        // KEEP this
         present(controller,animated: true, completion: nil)
     }
     @IBAction func cancelToShareMeme(_ sender: Any) {
         leaveMemeInBetween()
     }
+    //To clear texts up on touch
     @IBAction func topTextField(_ sender: Any) {
         textFieldDidBeginEditing(topTextField)
         
@@ -93,26 +104,31 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         print("share button action is active")
         dismiss(animated: true, completion: nil)
        }
+       //IF Image picking is cancelled
        func imagePickerControllerDidCancel(_ picker: UIImagePickerController)
        {
           dismiss(animated: true, completion: nil)
        }
+       //To clear text in text fields when user starts editing
     @objc func textFieldDidBeginEditing(_ textField: UITextField){
            if (textField == topTextField && textField.text == "TOP") || (textField == bottomTextField && textField.text == "BOTTOM"){
                textField.text = " "
            }
        }
+       //to dismiss key board when user clicks return
     @objc func textFieldShouldReturn(_ textField: UITextField) -> Bool{
             textField.resignFirstResponder()
            return true
        }
+       //Text in text field specifications
        let memeTextAttributes: [NSAttributedString.Key: Any] = [
            NSAttributedString.Key.strokeColor: UIColor.black,
            NSAttributedString.Key.foregroundColor:UIColor.white,
            NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-           NSAttributedString.Key.strokeWidth: -3.5
+           NSAttributedString.Key.strokeWidth: -2.0
        ]
        
+       //Key board settings
        @objc func keyboardWillShow(_ notification:Notification){
            if bottomTextField.isFirstResponder{
                view.frame.origin.y = -getKeyboardHeight(notification)
@@ -140,11 +156,11 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
        }
        
        func save() {
+           // Create and save the meme
            _ = Meme(topText: topTextField.text!,
                            bottomText: bottomTextField.text!,
                            originalImage:imagePickerView.image!,
                            memedImage: generateMemedImage())
-           
        }
 
     struct Meme {
@@ -154,23 +170,29 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
            let memedImage:UIImage
        }
        
+       //Created final MEME
        func generateMemedImage() -> UIImage {
+           //Hide tab and nav bars
            self.navigationController?.navigationBar.isHidden = true;
 
            self.tabBarController?.tabBar.isHidden = true;
+           // Render view to an image
            UIGraphicsBeginImageContext(self.view.frame.size)
            view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
            let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
            UIGraphicsEndImageContext()
+           //Show tab and nav bars
            self.navigationController?.navigationBar.isHidden = false;
            self.tabBarController?.tabBar.isHidden = false;
 
            return memedImage
        }
+       //to adapt user behaviour as discard in between
        func leaveMemeInBetween(){
            topTextField.text = "TOP"
            bottomTextField.text = "BOTTOM"
            imagePickerView.image = nil
+           //cant we make a recursive call?if yes,how!!
            initialState()
        }
       
@@ -178,37 +200,6 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         topTextField.text = "TOP"
         bottomTextField.text = "BOTTOM"
         imagePickerView.image = nil
-    }
-    let allVillains = Villain.allVillains
-    
-    // MARK: Table View Data Source
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.allVillains.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "VillainCell")!
-        let villain = self.allVillains[(indexPath as NSIndexPath).row]
-        
-        // Set the name and image
-        cell.textLabel?.text = villain.name
-        cell.imageView?.image = UIImage(named: villain.imageName)
-        
-        // If the cell has a detail label, we will put the evil scheme in.
-        if let detailTextLabel = cell.detailTextLabel {
-            detailTextLabel.text = "Scheme: \(villain.evilScheme)"
-        }
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let detailController = self.storyboard!.instantiateViewController(withIdentifier: "VillainDetailViewController") as! VillainDetailViewController
-        detailController.villain = self.allVillains[(indexPath as NSIndexPath).row]
-        self.navigationController!.pushViewController(detailController, animated: true)
     }
 
    }
